@@ -17,6 +17,8 @@ namespace TeaBagMaker
 
         string Selected = ""; // 선택 결과 저장
 
+        int CountOrgNum = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +50,11 @@ namespace TeaBagMaker
 
         private void TeaNameLabel_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
