@@ -18,6 +18,7 @@ namespace TeaBagMaker
         string Selected = ""; // 선택 결과 저장
 
         int CountOrgNum = 0;
+        string CountStr = "";
 
         public Form1()
         {
@@ -48,13 +49,49 @@ namespace TeaBagMaker
             }
         }
 
+
+        private void ProcessTimer()
+        {
+            this.CountOrgNum = Convert.ToInt32(Selected);
+            this.Timer.Enabled = true;
+        }
+
         private void TeaNameLabel_TextChanged(object sender, EventArgs e)
         {
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            ProcessTimer();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (this.CountOrgNum < 1)
+            {
+                this.Timer.Enabled = false;
+                MessageBox.Show("티백을 건지세요!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Combo.Focus();
+            }
+            else
+            {
+                this.CountOrgNum--;
 
+                if (CountOrgNum > 60)
+                {
+                    CountStr = (CountOrgNum/60)+"분" + (CountOrgNum%60)+"초";
+                    this.ResultText.Text = CountStr;
+                }
+                else
+                {
+                    CountStr = CountOrgNum + "초";
+                    this.ResultText.Text = CountStr;
+                }
+                
+            }
+        }
+
+        private void ResultText_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

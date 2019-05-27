@@ -34,6 +34,7 @@
             this.ResultText = new System.Windows.Forms.TextBox();
             this.TeaNameLabel = new System.Windows.Forms.TextBox();
             this.BtnCount = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Combo
@@ -45,12 +46,18 @@
             this.Combo.TabIndex = 0;
             this.Combo.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // ResultText
             // 
             this.ResultText.Location = new System.Drawing.Point(12, 88);
             this.ResultText.Name = "ResultText";
             this.ResultText.Size = new System.Drawing.Size(257, 21);
             this.ResultText.TabIndex = 1;
+            this.ResultText.TextChanged += new System.EventHandler(this.ResultText_TextChanged);
             // 
             // TeaNameLabel
             // 
@@ -70,11 +77,21 @@
             this.BtnCount.UseVisualStyleBackColor = true;
             this.BtnCount.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "2019.05.27 3504 김예원";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 140);
+            this.ClientSize = new System.Drawing.Size(281, 166);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCount);
             this.Controls.Add(this.TeaNameLabel);
             this.Controls.Add(this.ResultText);
@@ -94,6 +111,7 @@
         private System.Windows.Forms.TextBox ResultText;
         private System.Windows.Forms.TextBox TeaNameLabel;
         private System.Windows.Forms.Button BtnCount;
+        private System.Windows.Forms.Label label1;
     }
 }
 
