@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Combo = new System.Windows.Forms.ComboBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.ResultText = new System.Windows.Forms.TextBox();
             this.TeaNameLabel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.Controls.Add(this.ResultText);
             this.Controls.Add(this.Combo);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TeaBagMaker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -78,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox Combo;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.TextBox ResultText;
         private System.Windows.Forms.TextBox TeaNameLabel;
     }

@@ -13,9 +13,9 @@ namespace TeaBagMaker
     {
         // 초기 콤보박스 데이터 설정
         string[] TeaNameList = new string[]{"홍차", "녹차", "루이보스차", "국화차"};
-        int[] TeaTimeList = new int[] {120,180,300,120};
+        string[] TeaTimeList = new string[] {"120","180","300","120"};
 
-        string orgStr = ""; // 선택 결과 저장
+        string Selected = ""; // 선택 결과 저장
 
         public Form1()
         {
@@ -25,7 +25,12 @@ namespace TeaBagMaker
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Selected = TeaTimeList[this.Combo.SelectedIndex];
 
+            if (this.Combo.Text != "")
+            {
+                this.TeaNameLabel.Text = Selected;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,6 +39,7 @@ namespace TeaBagMaker
             {
                 this.Combo.Items.Add(TeaNameList[i]);
             }
+
             if (Combo.Items.Count > 0)
             {
                 this.Combo.SelectedIndex = 0;
