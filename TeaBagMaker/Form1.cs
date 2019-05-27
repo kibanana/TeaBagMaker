@@ -80,11 +80,13 @@ namespace TeaBagMaker
                 {
                     CountStr = (CountOrgNum/60)+"분" + (CountOrgNum%60)+"초";
                     this.ResultText.Text = CountStr;
+                    this.ResultText.ReadOnly = true;
                 }
                 else
                 {
                     CountStr = CountOrgNum + "초";
                     this.ResultText.Text = CountStr;
+                    this.ResultText.ReadOnly = true;
                 }
                 
             }
